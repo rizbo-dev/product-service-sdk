@@ -18,5 +18,5 @@ jobs:
 
       - name: PHP CS Fixer
         run: |
-          docker run --rm -v ${{ github.workspace }}:/app --user $(id -u):$(id -g) -w /app --entrypoint composer chialab/php:8.3 install
-          docker run --rm -v ${{ github.workspace }}:/app --user $(id -u):$(id -g) -w /app --entrypoint /app/vendor/bin/php-cs-fixer chialab/php:8.3 check --config=.php-cs-fixer.dist.php
+          docker run --rm -v ${{ github.workspace }}:/app --user $(id -u):$(id -g) -w /app --entrypoint composer chialab/php:8.2 install
+          docker run --rm -v ${{ github.workspace }}:/app --user $(id -u):$(id -g) -w /app --entrypoint /app/vendor/bin/php-cs-fixer chialab/php:8.2 check --config=.php-cs-fixer.dist.php
