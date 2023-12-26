@@ -1,0 +1,9 @@
+parameters :
+    checkGenericClassInNonGenericObjectType: false
+    # checkMissingIterableValueType: false
+    paths:
+        - src
+    tmpDir: var/cache/phpstan
+    level: 7
+    excludePaths:
+        - 'src/Controller/TestController.php'
