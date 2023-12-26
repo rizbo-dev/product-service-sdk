@@ -20,3 +20,23 @@ jobs:
         run: |
           docker run --rm -v ${{ github.workspace }}:/app --user $(id -u):$(id -g) -w /app --entrypoint composer chialab/php:8.2 install
           docker run --rm -v ${{ github.workspace }}:/app --user $(id -u):$(id -g) -w /app --entrypoint /app/vendor/bin/php-cs-fixer chialab/php:8.2 check --config=.php-cs-fixer.dist.php
+  phpstan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: PHPStan PHP 8.2
+        run: |
+          docker run --rm -v ${{ github.workspace }}:/app --user $(id -u):$(id -g) -w /app --entrypoint composer chialab/php:8.2 install
+          docker run --rm -v ${{ github.workspace }}:/app --user $(id -u):$(id -g) -w /app --entrypoint /app/vendor/bin/phpstan chialab/php:8.2
+  phpunit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Test PHP 8.2
+        run: |
+          docker run --rm -v ${{ github.workspace }}:/app --user $(id -u):$(id -g) -w /app --entrypoint composer chialab/php:8.2 install
+          docker run --rm -v ${{ github.workspace }}:/app --user $(id -u):$(id -g) -w /app --entrypoint /app/vendor/bin/phpunit chialab/php:8.2 -c /app/phpunit.xml.dist
