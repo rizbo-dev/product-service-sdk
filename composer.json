@@ -16,6 +16,10 @@
       "email": "boris.evetovic@infostud.com"
     }
   ],
+  "scripts": {
+    "fix-style": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
+    "check-style": "vendor/bin/php-cs-fixer fix --allow-risky=yes --dry-run"
+  },
   "require": {
     "symfony/serializer-pack": "^1.3"
   },

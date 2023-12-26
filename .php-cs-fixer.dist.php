@@ -1,8 +1,8 @@
 <?php
 
 $finder = (new PhpCsFixer\Finder())
-    ->in(__DIR__)
-    ->exclude('var')
+    ->in([__DIR__.'/src', __DIR__.'/tests'])
+    ->append([__FILE__])
 ;
 
 return (new PhpCsFixer\Config())
@@ -16,4 +16,4 @@ return (new PhpCsFixer\Config())
         'phpdoc_to_comment' => false,
     ])
     ->setFinder($finder)
-    ;
+;
