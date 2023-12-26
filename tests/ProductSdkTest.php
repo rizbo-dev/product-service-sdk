@@ -18,5 +18,4 @@ class ProductSdkTest extends TestCase
     {
         self::assertEquals(0, $this->productSdk->test());
     }
-
 }
