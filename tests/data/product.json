@@ -1,0 +1,16 @@
+{
+  "id": "id-test",
+  "createdAt": "2023-12-25T16:54:34+01:00",
+  "updatedAt": "2023-12-25T16:54:34+01:00",
+  "srName": "test",
+  "enName": "test",
+  "prices": [
+    {
+      "id": "test",
+      "validFrom": "2023-12-25T16:54:34+01:00",
+      "validTo": "2023-12-25T16:54:34+01:00",
+      "price": "10000",
+      "version": 1
+    }
+  ]
+}

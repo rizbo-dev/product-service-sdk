@@ -1,7 +1,8 @@
 <?php
 
-namespace Boris\Tests;
+namespace Boris\ProductServiceSdk\Tests;
 
+use Boris\ProductServiceSdk\Model\Product;
 use Boris\ProductServiceSdk\ProductSdk;
 use PHPUnit\Framework\TestCase;
 
@@ -11,11 +12,14 @@ class ProductSdkTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->productSdk = new ProductSdk();
+        $this->productSdk = new ProductSdk($_ENV['PRODUCT_SERVICE_HOST']);
     }
 
-    public function testTestFunction(): void
+    public function testGetById(): void
     {
-        self::assertEquals(0, $this->productSdk->test());
+        $id = 10;
+        $test = $this->productSdk->getAllProducts();
+
+        self::assertInstanceOf(Product::class, $test[0]);
     }
 }
